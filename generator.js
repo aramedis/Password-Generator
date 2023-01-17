@@ -30,7 +30,7 @@ var uppercase = {
 
 var passwordLength ={
     selector: document.querySelector('#length'),
-    number: document.getElementById('length').value
+    number: 10
 }
 //////////////**start work from here**///////////
 
@@ -79,7 +79,13 @@ special.selector.addEventListener('click', function() {
 });
 
 
-
+//fetch number input from HTML
+let num = document.querySelector('#length');
+// Handle number changes
+num.addEventListener('input', function () {
+	// As a number
+	passwordLength.number = num.value;
+});
 
 
 //console test to check generate pass button remembers preference
@@ -117,32 +123,43 @@ function randomElement() {
     }
 }
 
+//master function
+function writePassword() {
+    if (passwordLength.number >= 10 && passwordLength.number < 65) {
+        concatArrays();
+        randomElement();
+        // console.log(masterPass.join(""))
+        var passwordText = document.querySelector('#password');
+        
+        passwordText.value = masterPass.join("");
+        return;
+    } else {
+        alert("Please choose a number between 10 and 64")
+    }
+
+}
+
+
+
+
 // //master function
 // function writePassword() {
-//     if (9 < passwordLength.number < 65) {
-//         concatArrays();
-//         randomElement();
-//         // console.log(masterPass.join(""))
-//         var passwordText = document.querySelector('#password');
-        
-//         passwordText.value = masterPass.join("");
-//         return;
-//     } else {
-//         alert("Please choose a number between 10 and 64")
-//     }
+//     concatArrays();
+//     randomElement();
+//     // console.log(masterPass.join(""))
+//     var passwordText = document.querySelector('#password');
+    
+// // console.log(val , "my test input");
 
+//     passwordText.value = masterPass.join("");
+//     return;
 // }
 
 
-
-
-//master function
-function writePassword() {
-    concatArrays();
-    randomElement();
-    // console.log(masterPass.join(""))
-    var passwordText = document.querySelector('#password');
-    
-    passwordText.value = masterPass.join("");
-    return;
-}
+////test code from (https://gomakethings.com/how-to-get-the-value-of-an-input-as-a-number-with-vanilla-javascript/)
+// let num = document.querySelector('#myNumber');
+// // Handle number changes
+// num.addEventListener('input', function () {
+// 	// As a number
+// 	val = num.value;
+// });
