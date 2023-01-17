@@ -30,7 +30,7 @@ var uppercase = {
 
 var passwordLength ={
     selector: document.querySelector('#length'),
-    number: 10
+    number: document.getElementById('length').value
 }
 //////////////**start work from here**///////////
 
@@ -78,6 +78,10 @@ special.selector.addEventListener('click', function() {
     }
 });
 
+
+
+
+
 //console test to check generate pass button remembers preference
     // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
@@ -88,13 +92,10 @@ function writePassword() {
     console.log(masterPass);
   }
 
-masterArray = [];
-masterPass = [];
-// masterPassString = masterPass.join("");
-//the above didn't work for some reason
 
 //concatenate arrays
 function concatArrays() {
+    masterArray = [];
     for (var i = 0; i < options.length; i++) {
         if (options[i].check === true) {
             masterArray.push(options[i].values)
@@ -105,6 +106,7 @@ function concatArrays() {
 
 //Choose random element from the above concatenated random array
 function randomElement() {
+    masterPass = [];
     for (var i = 0; i < passwordLength.number; i++) {
         arrayLayer1 = masterArray[Math.floor(Math.random() * masterArray.length)];
         // console.log(arrayLayer1);
@@ -114,6 +116,25 @@ function randomElement() {
         // console.log(masterPass);
     }
 }
+
+// //master function
+// function writePassword() {
+//     if (9 < passwordLength.number < 65) {
+//         concatArrays();
+//         randomElement();
+//         // console.log(masterPass.join(""))
+//         var passwordText = document.querySelector('#password');
+        
+//         passwordText.value = masterPass.join("");
+//         return;
+//     } else {
+//         alert("Please choose a number between 10 and 64")
+//     }
+
+// }
+
+
+
 
 //master function
 function writePassword() {
@@ -125,4 +146,3 @@ function writePassword() {
     passwordText.value = masterPass.join("");
     return;
 }
-
