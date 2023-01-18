@@ -128,9 +128,11 @@ function writePassword() {
     if (passwordLength.number >= 10 && passwordLength.number < 65) {
         concatArrays();
         randomElement();
-        // console.log(masterPass.join(""))
+
+        //logic check to see at least 1 of each selected character is used in password, else regenerate
+
+        //handover the password, transformed to string - to HTML
         var passwordText = document.querySelector('#password');
-        
         passwordText.value = masterPass.join("");
         return;
     } else {
