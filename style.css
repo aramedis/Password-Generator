@@ -74,7 +74,7 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: #b3a7a7fb;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
@@ -135,3 +135,16 @@ button[disabled] {
     font-size: 0.8rem;
   }
 }
+
+
+/*CSS for main services on left */
+.options {
+  margin-bottom: 20px;
+  padding: 10px;
+  height: auto;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #b3a7a7fb;
+  color: #ffffff;
+
+}
+
